@@ -13,7 +13,7 @@ Rotational Joints: 5
 Gripper: Mechanical
 Speed of Movement: Adjustable(300 degree/s to 30 degree/s)
 
-## COMPONENTS USED
+## HARDWARE COMPONENTS USED
 ### Robotic Arm:
 A robotic arm is a sort of arm which may be mechanical, and can be programmed with
 capabilities almost equivalent to an actual arm. The robotic arm can be an aggregate of a
@@ -35,8 +35,18 @@ reflected waves are sensed by ultrasonic sensors. The time interval between to a
 ultrasonic wave is used to get distance of the object. Ultrasonic sensor detect presence and coordinates of object.
 Distance of object is 340 *(t/2) m where t in seconds.
 
-## Frontech Webcam
-It has 3 MP Image Resolution and USB Interface to connect it with PC and capture image of the object. It is a CMOS based camera with 640 x 480 Pixels and maximum frame rate of 30 fps
+### Frontech Webcam
+It has 3 MP Image Resolution and USB Interface to connect it with PC and capture image of the object. It is a CMOS based camera with 640 x 480 Pixels and maximum frame rate of 30 fps.
+
+## SOFTWARE COMPONENT USED:
+
+## Matlab
+It contains an image processing toolbox, a deep learning toolbox which helps in making image processing more programming compatible. MATLAB is equipped with toolbox to support Arduino programming and external camera integration to the system.
+
+## Arduino IDE
+Software to test hardware component of Robotic arm using Arduino Code before implementing in MATLAB.
+
+
 
 
 
