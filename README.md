@@ -40,11 +40,13 @@ It has 3 MP Image Resolution and USB Interface to connect it with PC and capture
 
 ## SOFTWARE COMPONENT USED:
 
-## Matlab
+### MATLAB
 It contains an image processing toolbox, a deep learning toolbox which helps in making image processing more programming compatible. MATLAB is equipped with toolbox to support Arduino programming and external camera integration to the system.
 
-## Arduino IDE
+### Arduino IDE
 Software to test hardware component of Robotic arm using Arduino Code before implementing in MATLAB.
+
+## MATLAB CODE FOR IMAGE CLASSIFICATION
 
 
 
