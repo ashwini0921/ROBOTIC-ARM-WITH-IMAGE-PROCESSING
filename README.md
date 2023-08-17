@@ -166,7 +166,7 @@ After 6 epochs the validation accuracy acheived after 6 epochs is 94.12%. The va
 ![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/31a3bdb9-4ec9-4b05-b6df-b4c198b5257d)
 ![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/dddd9074-0206-45f8-a510-1486a66cfc09)
 
-#### MATLAB code for GoogLeNet Deep Learning Model for fruit Classification:
+#### MATLAB code for SqueezeNet Deep Learning Model for fruit Classification:
 
 ```
 clear
@@ -282,6 +282,32 @@ After 6 epochs the validation accuracy acheived after 6 epochs is 100%. The vali
 ### Conclusion
 Both pre-trained model GoogLeNet and SqueezeNet were implemented. It is found that SqueezeNet acheived 100% accuracy for above application.
 
+### Create a function to classify the fruits directly from trained network
+
+#### MATLAB CODE FOR THE FUNCTION
+
+```
+disp(classifier(imread("Test_data/apple18.jpg"),net))
+function label=classifier(image,net)
+inputSize = net.Layers(1).InputSize
+pixelRange = [-30 30];
+scaleRange = [0.9 1.1];
+imageAugmenter = imageDataAugmenter( ...
+    'RandXReflection',true, ...
+    'RandXTranslation',pixelRange, ...
+    'RandYTranslation',pixelRange, ...
+    'RandXScale',scaleRange, ...
+    'RandYScale',scaleRange);
+augimdsimage = augmentedImageDatastore(inputSize(1:2),image, ...
+    'DataAugmentation',imageAugmenter,'ColorPreprocessing', 'gray2rgb');
+[label,score] = classify(net,augimdsimage);
+end
+```
+#### FIGURE OF APPLE18
+![apple18](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/dc62704b-9de3-4d7e-a010-9b8bf8496c85)
+
+#### MATLAB OUTPUT
+![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/1d8d5af5-2985-4172-b397-1ebf966f9134)
 
 
 
