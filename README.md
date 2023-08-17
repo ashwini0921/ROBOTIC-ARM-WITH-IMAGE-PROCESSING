@@ -309,7 +309,69 @@ end
 #### MATLAB OUTPUT
 ![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/1d8d5af5-2985-4172-b397-1ebf966f9134)
 
-## MATLAB CODE FOR IMAGE CLASSIFICATION
+## HARDWARE SETUP AND IMPLEMENTAION
+
+### Move the endeffector to object location
+
+#### MATLAB CODE FOR CONTROLING ROBOT SERVO MOTOR
+```
+a = arduino('COM4', 'Uno', 'Libraries', 'Servo','Ultrasonic');
+s1 = servo(a, 'D8')
+s2 = servo(a, 'D9')
+s3 = servo(a, 'D10')
+s4 = servo(a, 'D11')
+s5 = servo(a, 'D12')
+s6 = servo(a, 'D13')
+distance_sensor= ultrasonic(a,'D2','D3')
+r=0.0;
+r1=11.8;
+r2=23.1836;
+while 1
+setInitial(s1,s2,s3,s4,s5,s6);
+xc=0;yc=readDistance(distance_sensor);zc=0;
+yc=yc+9.3;
+if(yc<23)
+    r=sqrt(xc.^2+yc.^2+zc.^2);
+    theta3=atan(yc./xc)*57.2957795;
+    theta2=acos((r.^2-r1.^2-r2.^2)/(2*r1*r2));
+    theta1=(acos((r1+r2*cos(theta2))./r)+acos(sqrt((xc.^2+yc.^2)./(r.^2))))*57.2957795;
+    theta2=theta2*57.2957795;
+    pause(0.5);
+    writePosition(s1, theta1);
+    pause(0.5);
+    writePosition(s2, theta2);
+    pause(0.5);
+    writePosition(s3, theta3);
+    activateendeffector(s6);
+    pause(10)
+end
+pause(10)
+end
+
+function setInitial(s1,s2,s3,s4,s5,s6)
+    pause(0.5);
+    writePosition(s1, 100);
+    pause(0.5);
+    writePosition(s2, 60);
+    pause(0.5);
+    writePosition(s3, 0);
+    pause
+    writePosition(s4, 90);
+    pause(0.5);
+    writePosition(s5, 60);
+    pause(0.5);
+    writePosition(s6, 120);
+    pause(0.5);
+end
+function activateendeffector(s6)
+    pause(0.5);
+    writePosition(s6, 0);
+    pause(0.5);
+end
+```
+
+### Video Demonstration
+
 
 
 
