@@ -369,8 +369,11 @@ function activateendeffector(s6)
     pause(0.5);
 end
 ```
+#### HARDWARE SETUP
 
-### Video Demonstration
+![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/248dbb1e-efc1-42eb-b948-978511762dfc)
+
+#### Video Demonstration
 
 
 
