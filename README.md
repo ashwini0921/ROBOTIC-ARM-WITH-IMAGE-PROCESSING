@@ -48,6 +48,14 @@ Software to test hardware component of Robotic arm using Arduino Code before imp
 
 ## MATLAB CODE FOR IMAGE CLASSIFICATION
 
+### STARTING WITH BUILDING A MODEL:
+
+#### SAMPLE IMAGES OF APPLES
+![apple6](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/c4416433-3973-43a2-8fbe-f54f3e76bfdf)
+#### SAMPLE IMAGES OF ORANGES
+![images11](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/470edbea-3732-4301-88f9-31c5be4a9cd7)
+#### SAMPLE IMAGES OF BANANA
+![images8](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/db59c8b2-6a33-4342-bbde-bfa4862e6d4d)
 
 
 
