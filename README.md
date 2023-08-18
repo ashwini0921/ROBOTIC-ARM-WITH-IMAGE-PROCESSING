@@ -377,6 +377,103 @@ end
 
 https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/26f681d1-f6d3-48db-98a4-d8c177dfbedc
 
+## INTEGRATING CAMERA TO ABOVE HARDWARE SETUP AND DEPLOY CLASSIFICATION MODEL
+
+### MATLAB CODE:
+```
+a = arduino('COM4', 'Uno', 'Libraries', 'Servo','Ultrasonic');
+s1 = servo(a, 'D8')
+s2 = servo(a, 'D9')
+s3 = servo(a, 'D10')
+s4 = servo(a, 'D11')
+s5 = servo(a, 'D12')
+s6 = servo(a, 'D13')
+camera = webcam;
+distance_sensor= ultrasonic(a,'D2','D3')
+r=0.0;
+r1=11.8;
+r2=23.1836;
+xc_orange=input("Enter x coordinate of orange box")
+yc_orange=input("Enter y coordinate of orange box")
+xc_apple=input("Enter x coordinate of apple box")
+yc_apple=input("Enter y coordinate of apple box")
+xc_banana=input("Enter x coordinate of banana box")
+yc_banana=input("Enter y coordinate of banana box")
+while 1
+setInitial(s1,s2,s3,s4,s5,s6);
+xc=0;yc=readDistance(distance_sensor);zc=0;
+yc=yc+9.3;
+im = snapshot(camera);
+image(im)
+label=classifier(im,net)
+movecoordinate(xc,yc,zc,r,r1,r2);
+pause(10)
+if(label=='orange')
+    movecoordinate(xc_orange,yc_orange,0,r,r1,r2);
+    pause(10)
+elseif(label=='apple')
+    movecoordinate(xc_apple,yc_apple,0,r,r1,r2);
+    pause(10)
+elseif(label=='banana')
+    movecoordinate(xc_banana,yc_banana,0,r,r1,r2);
+    pause(10)
+end
+end
+
+function setInitial(s1,s2,s3,s4,s5,s6)
+    pause(0.5);
+    writePosition(s1, 100);
+    pause(0.5);
+    writePosition(s2, 60);
+    pause(0.5);
+    writePosition(s3, 0);
+    pause
+    writePosition(s4, 90);
+    pause(0.5);
+    writePosition(s5, 60);
+    pause(0.5);
+    writePosition(s6, 120);
+    pause(0.5);
+end
+function activateendeffector(s6)
+    pause(0.5);
+    writePosition(s6, 0);
+    pause(0.5);
+end
+function movecoordinate(xc,yc,zc,r,r1,r2)
+if(yc<23 && xc<23 && zc<23 && yc>-23 && xc>-23 && zc>-23)
+    r=sqrt(xc.^2+yc.^2+zc.^2);
+    theta3=atan(yc./xc)*57.2957795;
+    theta2=acos((r.^2-r1.^2-r2.^2)/(2*r1*r2));
+    theta1=(acos((r1+r2*cos(theta2))./r)+acos(sqrt((xc.^2+yc.^2)./(r.^2))))*57.2957795;
+    theta2=theta2*57.2957795;
+    pause(0.5);
+    writePosition(s1, theta1);
+    pause(0.5);
+    writePosition(s2, theta2);
+    pause(0.5);
+    writePosition(s3, theta3);
+    activateendeffector(s6);
+    pause(10)
+end
+end
+
+function label=classifier(image,net)
+inputSize = net.Layers(1).InputSize
+pixelRange = [-30 30];
+scaleRange = [0.9 1.1];
+imageAugmenter = imageDataAugmenter( ...
+    'RandXReflection',true, ...
+    'RandXTranslation',pixelRange, ...
+    'RandYTranslation',pixelRange, ...
+    'RandXScale',scaleRange, ...
+    'RandYScale',scaleRange);
+augimdsimage = augmentedImageDatastore(inputSize(1:2),image, ...
+    'DataAugmentation',imageAugmenter,'ColorPreprocessing', 'gray2rgb');
+[label,score] = classify(net,augimdsimage);
+end
+```
+
 ## REFERENCES
 
 [1] https://arxiv.org/ftp/arxiv/papers/2201/2201.07882.pdf
