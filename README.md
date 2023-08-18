@@ -7,7 +7,7 @@ The project involves the development of a 6-degree-of-freedom (DOF) robotic arm 
 
 ## ROBOT SPECIFICATION
 Drive System: Electric motor(servo motor)
-Programming Software: MATLAB, ARDUINO IDE
+Programming Software: MATLAB
 Degree of Freedom: 5
 Rotational Joints: 5
 Gripper: Mechanical
@@ -49,16 +49,16 @@ Software to test hardware component of Robotic arm using Arduino Code before imp
 ## MATLAB CODE FOR IMAGE CLASSIFICATION
 
 #### SAMPLE IMAGES OF APPLES
-![apple6](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/c4416433-3973-43a2-8fbe-f54f3e76bfdf)
+![1](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/2b070fb9-2a2c-4afc-b0da-2abaf26219ae)
 #### SAMPLE IMAGES OF ORANGES
-![images11](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/470edbea-3732-4301-88f9-31c5be4a9cd7)
+![2](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/26cad09a-abf4-4f21-96d9-67dd45759bea)
 #### SAMPLE IMAGES OF BANANA
-![images8](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/db59c8b2-6a33-4342-bbde-bfa4862e6d4d)
+![3](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/c263d5fc-023e-4e83-b728-6ecac685165e)
 
 ### Building the Deep Neural Network Model using GoogLeNet:
 
 #### GoogLeNet Architecture:
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/8b9c471d-e02a-4a38-ac71-087524c3ee61)
+![4](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/57b7cdad-c1f7-46cd-b8de-dfd5cf4bc538)
 
 #### MATLAB code for GoogLeNet Deep Learning Model for fruit Classification:
 ```
@@ -151,7 +151,7 @@ end
 ```
 #### MATLAB output for above fruit classification based model
 
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/cf7e929c-b920-4bcb-8985-11b77e2e228a)
+![5](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/6d4ce425-2178-4e87-986a-7dab2e41cf8f)
 
 #### Conclusion from above output
 
@@ -162,9 +162,9 @@ After 6 epochs the validation accuracy acheived after 6 epochs is 94.12%. The va
 
 #### SqueezNet Architecture:
 
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/7b99573a-4d30-4237-b981-38df209222c7)
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/31a3bdb9-4ec9-4b05-b6df-b4c198b5257d)
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/dddd9074-0206-45f8-a510-1486a66cfc09)
+![6](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/32ab8505-8a55-42df-801b-94a8f5c36004)
+![7](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/f5d2464e-05cd-409f-b93d-461bbd0d04e2)
+![8](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/76a83ee1-ea40-4962-997a-894352713e78)
 
 #### MATLAB code for SqueezeNet Deep Learning Model for fruit Classification:
 
@@ -273,7 +273,7 @@ end
 ```
 #### MATLAB output for above fruit classification based model
 
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/15763868-638c-4012-af4f-719532522925)
+![9](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/0daa2ab8-1ff6-42dc-9215-c03342445794)
 
 #### Conclusion from above output
 
@@ -304,10 +304,10 @@ augimdsimage = augmentedImageDatastore(inputSize(1:2),image, ...
 end
 ```
 #### FIGURE OF APPLE18
-![apple18](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/dc62704b-9de3-4d7e-a010-9b8bf8496c85)
+![10](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/4d70fa91-f92e-4e4f-92b9-637ac58c7e73)
 
 #### MATLAB OUTPUT
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/1d8d5af5-2985-4172-b397-1ebf966f9134)
+![11](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/9ba6e092-668b-47bb-b96f-f86f46f10508)
 
 ## HARDWARE SETUP AND IMPLEMENTAION
 
@@ -371,12 +371,11 @@ end
 ```
 #### HARDWARE SETUP
 
-![image](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/248dbb1e-efc1-42eb-b948-978511762dfc)
+![12](https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/79bf524b-f783-43c7-85aa-1fecf42d51dc)
 
 #### Video Demonstration
 
-https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/54964066-28b1-4eac-8d7b-9b7a38fd40e9
-
+https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/26f681d1-f6d3-48db-98a4-d8c177dfbedc
 
 
 
