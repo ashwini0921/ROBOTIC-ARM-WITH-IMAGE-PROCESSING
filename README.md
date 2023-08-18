@@ -288,7 +288,7 @@ Both pre-trained model GoogLeNet and SqueezeNet were implemented. It is found th
 
 ```
 disp(classifier(imread("Test_data/apple18.jpg"),net))
-function label=classifier(image,net)
+function label=classifier(image1,net)
 inputSize = net.Layers(1).InputSize
 pixelRange = [-30 30];
 scaleRange = [0.9 1.1];
@@ -298,7 +298,7 @@ imageAugmenter = imageDataAugmenter( ...
     'RandYTranslation',pixelRange, ...
     'RandXScale',scaleRange, ...
     'RandYScale',scaleRange);
-augimdsimage = augmentedImageDatastore(inputSize(1:2),image, ...
+augimdsimage = augmentedImageDatastore(inputSize(1:2),image1, ...
     'DataAugmentation',imageAugmenter,'ColorPreprocessing', 'gray2rgb');
 [label,score] = classify(net,augimdsimage);
 end
@@ -458,7 +458,7 @@ if(yc<23 && xc<23 && zc<23 && yc>-23 && xc>-23 && zc>-23)
 end
 end
 
-function label=classifier(image,net)
+function label=classifier(image1,net)
 inputSize = net.Layers(1).InputSize
 pixelRange = [-30 30];
 scaleRange = [0.9 1.1];
@@ -468,7 +468,7 @@ imageAugmenter = imageDataAugmenter( ...
     'RandYTranslation',pixelRange, ...
     'RandXScale',scaleRange, ...
     'RandYScale',scaleRange);
-augimdsimage = augmentedImageDatastore(inputSize(1:2),image, ...
+augimdsimage = augmentedImageDatastore(inputSize(1:2),image1, ...
     'DataAugmentation',imageAugmenter,'ColorPreprocessing', 'gray2rgb');
 [label,score] = classify(net,augimdsimage);
 end
