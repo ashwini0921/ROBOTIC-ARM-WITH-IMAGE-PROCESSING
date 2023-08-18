@@ -377,7 +377,13 @@ end
 
 https://github.com/ashwini0921/ROBOTIC-ARM-WITH-IMAGE-PROCESSING/assets/111654188/26f681d1-f6d3-48db-98a4-d8c177dfbedc
 
+## REFERENCES
 
+[1] https://arxiv.org/ftp/arxiv/papers/2201/2201.07882.pdf
+
+[2] https://medium.com/xrpractices/how-to-train-your-robot-arm-fbf5dcd807e1
+
+[3] https://www.researchgate.net/publication/341202448_Robotic_Arm_Control_and_Task_
 
 
 
